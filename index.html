@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hoofddorp Roleplay</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f7fa;
-      --fg: #1f1f1f;
+      --bg: #f9f9f9;
+      --fg: #1c1c1c;
       --accent: #007acc;
-      --card-bg: #ffffff;
-      --shadow: rgba(0,0,0,0.05);
+      --card-bg: #fff;
+      --shadow: rgba(0, 0, 0, 0.05);
     }
 
     * {
@@ -22,90 +22,127 @@
     }
 
     body {
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--fg);
-      line-height: 1.6;
     }
 
     header {
       text-align: center;
-      padding: 50px 20px 30px;
+      padding: 40px 20px 20px;
     }
 
     header img {
-      width: 100px;
+      width: 90px;
       border-radius: 12px;
       box-shadow: 0 5px 15px var(--shadow);
     }
 
     header h1 {
       margin-top: 20px;
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 0 20px 40px;
-    }
-
-    .section {
-      background-color: var(--card-bg);
-      border-radius: 12px;
-      padding: 30px;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 20px var(--shadow);
-    }
-
-    .section h2 {
-      font-size: 1.6rem;
-      margin-bottom: 15px;
+      font-size: 2.2rem;
       color: var(--accent);
     }
 
-    .section p, .section ul {
-      font-size: 1rem;
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
     }
 
-    .section ul {
+    nav button {
+      background: none;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    nav button:hover,
+    nav button.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .tab-content {
+      display: none;
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px var(--shadow);
+      animation: fade 0.3s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content h2 {
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .tab-content ul {
       padding-left: 20px;
     }
 
-    .section ul li {
+    .tab-content li {
       margin-bottom: 10px;
     }
 
     .button {
       display: inline-block;
+      margin-top: 15px;
+      background: var(--accent);
+      color: white;
       padding: 12px 20px;
-      background-color: var(--accent);
-      color: #fff;
-      border-radius: 6px;
       text-decoration: none;
+      border-radius: 6px;
       font-weight: 600;
-      margin-top: 10px;
       transition: background 0.2s ease-in-out;
     }
 
     .button:hover {
-      background-color: #005fa3;
+      background: #005fa3;
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9em;
-      color: #666;
+      padding: 20px;
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    .made-by {
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-top: 20px;
+    }
+
+    @keyframes fade {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
+      nav {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .section {
-        padding: 20px;
+      nav button {
+        width: 80%;
+        margin-bottom: 10px;
       }
     }
   </style>
@@ -113,54 +150,73 @@
 <body>
 
   <header>
-    <img src="logo.png" alt="Hoofddorp Roleplay Logo">
+    <img src="logo.png" alt="Hoofddorp Roleplay Logo" />
     <h1>Hoofddorp Roleplay</h1>
   </header>
 
-  <main class="container">
+  <nav>
+    <button class="tab-btn active" data-tab="info">Info</button>
+    <button class="tab-btn" data-tab="regels">Regels</button>
+    <button class="tab-btn" data-tab="discord">Discord</button>
+  </nav>
 
-    <section class="section">
-      <h2>Over de Server</h2>
+  <main>
+    <div class="tab-content active" id="info">
+      <h2>Over Hoofddorp Roleplay</h2>
       <p>
-        Hoofddorp Roleplay is een realistische Nederlandse roleplay ervaring. Sluit je aan als politie, burger, hulpdienst of ondernemer in een actieve community met eigen voertuigen, systemen en regels.
+        Hoofddorp Roleplay is een realistische Nederlandse roleplay-server. Speel als burger, politie, DSI, ambulance of brandweer. Met eigen voertuigen, systemen en een actieve community.
       </p>
-    </section>
-
-    <section class="section">
-      <h2>Wat kun je doen?</h2>
       <ul>
-        <li>Politie, DSI, ambulance of brandweer spelen</li>
-        <li>Realistisch roleplayen met andere spelers</li>
-        <li>Voertuigen besturen & bedrijven opzetten</li>
-        <li>Dagelijkse roleplay events en missies</li>
+        <li>🔹 Solliciteer bij de hulpdiensten</li>
+        <li>🔹 Neem deel aan realistische roleplay situaties</li>
+        <li>🔹 Gebruik voertuigen, bedrijven en custom scripts</li>
       </ul>
-    </section>
+      <p class="made-by">
+        Deze website is gemaakt door Donald. Wilt u ook een website? Contacteer via Discord: <strong>donaldog0</strong>
+      </p>
+    </div>
 
-    <section class="section">
+    <div class="tab-content" id="regels">
       <h2>Regels & Straffen</h2>
-      <p>
-        We hanteren duidelijke regels voor een eerlijke en veilige speelervaring. Hieronder enkele belangrijke:
-      </p>
       <ul>
-        <li> De regels worden nog toegevoegd voor nu kunt u ze zien in de discord.</li>
+        <li>❌ Geen schieten op de DSI Bearcat of ME Flexbus</li>
+        <li>❌ Niet taggen van moderators (straf: mute)</li>
+        <li>❌ Geen vragen om sollicitaties (straf: sollicitatie-blacklist)</li>
       </ul>
-      <p>Volledige regels vind je op onze Discord-server.</p>
-      <a href="https://discord.gg/SU9ugQZ9yd" class="button" target="_blank">Bekijk regels op Discord</a>
-    </section>
-
-    <section class="section">
-      <h2>Word lid van onze Discord</h2>
       <p>
-        Op Discord vind je alle info, updates, sollicitaties en community chat. Word vandaag nog lid!
+        Voor de volledige lijst met regels, bekijk onze Discord-server hieronder.
       </p>
-      <a href="https://discord.gg/SU9ugQZ9yd" class="button" target="_blank">Join de Discord</a>
-    </section>
+    </div>
 
+    <div class="tab-content" id="discord">
+      <h2>Onze Discord Server</h2>
+      <p>
+        Word lid van onze Discord voor community updates, whitelists, sollicitaties en contact met staff.
+      </p>
+      <a href="https://discord.gg/YOURSERVER" class="button" target="_blank">Join onze Discord</a>
+    </div>
   </main>
 
   <footer>
     &copy; 2025 Hoofddorp Roleplay. Alle rechten voorbehouden.
   </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const tabs = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Verwijder active van alle knoppen en inhoud
+        buttons.forEach(btn => btn.classList.remove('active'));
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        // Voeg active toe aan geklikte knop en juiste inhoud
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
