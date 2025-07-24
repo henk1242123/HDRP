@@ -1,114 +1,111 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hoofddorp Roleplay</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #f5f7fa;
+      --fg: #1f1f1f;
+      --accent: #007acc;
+      --card-bg: #ffffff;
+      --shadow: rgba(0,0,0,0.05);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Rubik', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      background: linear-gradient(to bottom, #1e1e2f, #12121c);
-      color: #fff;
-      overflow-x: hidden;
+      background-color: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
     }
 
     header {
       text-align: center;
-      padding: 40px 20px;
-      animation: fadeInDown 1s ease-out;
+      padding: 50px 20px 30px;
     }
 
     header img {
-      width: 140px;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      width: 100px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px var(--shadow);
     }
 
     header h1 {
-      font-size: 2.8em;
       margin-top: 20px;
-      color: #00b7ff;
-      text-shadow: 0 0 5px rgba(0,183,255,0.5);
+      font-size: 2.5rem;
+      font-weight: 700;
     }
 
-    .content {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-      animation: fadeInUp 1.2s ease-out;
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 40px;
     }
 
     .section {
-      margin-bottom: 40px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 20px var(--shadow);
     }
 
     .section h2 {
-      font-size: 2em;
+      font-size: 1.6rem;
       margin-bottom: 15px;
-      color: #00b7ff;
-      border-bottom: 2px solid #00b7ff;
-      display: inline-block;
-      padding-bottom: 5px;
+      color: var(--accent);
     }
 
-    .section p {
-      font-size: 1.1em;
-      line-height: 1.7em;
+    .section p, .section ul {
+      font-size: 1rem;
     }
 
-    .discord-button {
+    .section ul {
+      padding-left: 20px;
+    }
+
+    .section ul li {
+      margin-bottom: 10px;
+    }
+
+    .button {
       display: inline-block;
-      background-color: #5865F2;
-      color: white;
-      padding: 14px 28px;
-      font-size: 1.1em;
-      border-radius: 8px;
+      padding: 12px 20px;
+      background-color: var(--accent);
+      color: #fff;
+      border-radius: 6px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 0 15px rgba(88, 101, 242, 0.4);
-      margin-top: 20px;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: background 0.2s ease-in-out;
     }
 
-    .discord-button:hover {
-      background-color: #4752c4;
+    .button:hover {
+      background-color: #005fa3;
     }
 
     footer {
       text-align: center;
       padding: 30px 20px;
-      background-color: #0f0f1a;
       font-size: 0.9em;
-      color: #aaa;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 12px;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      color: #666;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2em;
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 20px;
       }
     }
   </style>
@@ -116,47 +113,52 @@
 <body>
 
   <header>
-    <img src="logo.png" alt="Hoofddorp Roleplay Logo" />
+    <img src="logo.png" alt="Hoofddorp Roleplay Logo">
     <h1>Hoofddorp Roleplay</h1>
   </header>
 
-  <div class="content">
+  <main class="container">
 
-    <div class="section">
-      <h2>🎮 Over de server</h2>
-      <p>Welkom bij <strong>Hoofddorp Roleplay</strong>, de ultieme Nederlandse roleplay-ervaring! Rijd in politiewagens, werk als burger, handhaaf de orde of pleeg misdaad — de keuzes zijn aan jou. Realisme en gezelligheid staan bij ons centraal.</p>
-    </div>
+    <section class="section">
+      <h2>Over de Server</h2>
+      <p>
+        Hoofddorp Roleplay is een realistische Nederlandse roleplay-ervaring. Sluit je aan als politie, burger, hulpdienst of ondernemer in een actieve community met eigen voertuigen, systemen en regels.
+      </p>
+    </section>
 
-    <div class="section">
-      <h2>🛠 Wat kun je doen?</h2>
+    <section class="section">
+      <h2>Wat kun je doen?</h2>
       <ul>
-        <li>🚓 Word politieagent, DSI of marechaussee</li>
-        <li>🏥 Werk bij de ambulance of brandweer</li>
-        <li>🚗 Rijd rond in realistische voertuigen</li>
-        <li>🏙 Start je eigen bedrijf of baan</li>
-        <li>💬 Maak vrienden en beleef avonturen in onze actieve community</li>
+        <li>Politie, DSI, ambulance of brandweer spelen</li>
+        <li>Realistisch roleplayen met andere spelers</li>
+        <li>Voertuigen besturen & bedrijven opzetten</li>
+        <li>Dagelijkse roleplay-events en missies</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>📜 Regels & Straffen</h2>
-      <p>Hieronder vind je de belangrijkste regels van Hoofddorp Roleplay. Deze zorgen ervoor dat iedereen op een eerlijke en leuke manier kan spelen. Overtredingen leiden tot passende straffen, variërend van een waarschuwing tot een ban.</p>
+    <section class="section">
+      <h2>Regels & Straffen</h2>
+      <p>
+        We hanteren duidelijke regels voor een eerlijke en veilige speelervaring. Hieronder enkele belangrijke:
+      </p>
+      <ul>
+        <li>❌ Geen schieten op DSI Bearcat of ME Flexbus</li>
+        <li>❌ Taggen van moderators is niet toegestaan (mute)</li>
+        <li>❌ Vragen naar sollicitaties is verboden (sollicitatie-blacklist)</li>
+      </ul>
+      <p>Volledige regels vind je op onze Discord-server.</p>
+      <a href="https://discord.gg/YOURSERVER" class="button" target="_blank">Bekijk regels op Discord</a>
+    </section>
 
-      <div id="regels-lijst" style="margin-top:20px; padding-left: 20px;">
-        <!-- Voeg hier je regels toe -->
-        <p style="color: #888;">De regels worden binnenkort toegevoegd.</p>
-      </div>
+    <section class="section">
+      <h2>Word lid van onze Discord</h2>
+      <p>
+        Op Discord vind je alle info, updates, sollicitaties en community-chat. Word vandaag nog lid!
+      </p>
+      <a href="https://discord.gg/YOURSERVER" class="button" target="_blank">Join de Discord</a>
+    </section>
 
-      <a href="https://discord.gg/YOURSERVER" class="discord-button" target="_blank">Bekijk op Discord</a>
-    </div>
-
-    <div class="section">
-      <h2>💬 Word lid van onze Discord!</h2>
-      <p>Onze community is actief en behulpzaam. Voor vragen, updates en roleplay-evenementen kun je altijd terecht op onze Discord-server.</p>
-      <a href="https://discord.gg/YOURSERVER" class="discord-button" target="_blank">Join de Discord</a>
-    </div>
-
-  </div>
+  </main>
 
   <footer>
     &copy; 2025 Hoofddorp Roleplay. Alle rechten voorbehouden.
